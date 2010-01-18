@@ -13,7 +13,9 @@ class Couchdb <Formula
     system "./configure", "--prefix=#{prefix}",
                           "--localstatedir=#{var}",
                           "--sysconfdir=#{etc}",
-                          "--with-erlang=#{HOMEBREW_PREFIX}/lib/erlang/usr/include"
+                          "--with-erlang=#{HOMEBREW_PREFIX}/lib/erlang/usr/include",
+                          "--with-js-include=#{HOMEBREW_PREFIX}/include",
+                          "--with-js-lib=#{HOMEBREW_PREFIX}/lib"
     system "make"
     system "make install"
 
