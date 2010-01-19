@@ -9,12 +9,23 @@ class Ruby <Formula
 
   depends_on 'readline'
   
+  def options
+    [
+      ["--suffix", "Add a 1.9 suffix to commands"],
+    ]
+  end
+  
   def install
     ENV.gcc_4_2
-    system "./configure", "--prefix=#{prefix}",
-                          "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--enable-shared"
+
+    args = [ "--prefix=#{prefix}",
+            "--disable-debug",
+            "--disable-dependency-tracking",
+            "--enable-shared" ]
+
+    args << "--program-suffix=1.9" if ARGV.include? "--suffix"
+
+    system "./configure", *args
     system "make"
     system "make install"
   end
