@@ -3,15 +3,15 @@ require 'formula'
 # TODO de-version the include and lib directories
 
 class Ruby <Formula
-  @url='http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p376.tar.gz'
+  @url='http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p378.tar.gz'
   @homepage='http://www.ruby-lang.org/en/'
-  @md5='ebb20550a11e7f1a2fbd6fdec2a3e0a3'
+  @md5='9fc5941bda150ac0a33b299e1e53654c'
 
   depends_on 'readline'
   
   def options
     [
-      ["--suffix", "Add a 1.9 suffix to commands"],
+      ["--with-suffix", "Add a 19 suffix to commands"],
     ]
   end
   
@@ -23,7 +23,7 @@ class Ruby <Formula
             "--disable-dependency-tracking",
             "--enable-shared" ]
 
-    args << "--program-suffix=1.9" if ARGV.include? "--suffix"
+    args << "--program-suffix=19" if ARGV.include? "--with-suffix"
 
     system "./configure", *args
     system "make"
@@ -32,8 +32,8 @@ class Ruby <Formula
   
   def caveats; <<-EOS
 If you install gems with the RubyGems installed with this formula they will
-to this formula's prefix. This needs to be fixed, as for example, upgrading
-Ruby will lose all your gems.
+be installed to this formula's prefix. This needs to be fixed, as for example,
+upgrading Ruby will lose all your gems.
     EOS
   end
   
