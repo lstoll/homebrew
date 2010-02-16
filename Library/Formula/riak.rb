@@ -3,7 +3,8 @@ require 'formula'
 class Riak <Formula
   depends_on 'erlang'
   
-  url 'http://hg.basho.com/riak/get/tip.zip'
+  url 'http://hg.basho.com/riak/get/riak-0.8.zip'
+  md5 '6fc99aa641308abf899c7b71f1461f81'
   homepage 'http://riak.basho.com'
   version '0.8'
   
