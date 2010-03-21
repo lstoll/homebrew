@@ -3,10 +3,9 @@ require 'formula'
 class Riak <Formula
   depends_on 'erlang'
   
-  url 'http://hg.basho.com/riak/get/riak-0.8.zip'
-  md5 '6fc99aa641308abf899c7b71f1461f81'
+  url 'http://downloads.basho.com/riak/riak-0.9/riak-0.9.1.tar.gz'
   homepage 'http://riak.basho.com'
-  version '0.8'
+  md5 '1f78bb838ae6ded568486b0b56655613'
   
   skip_clean 'log'
   skip_clean 'log/sasl'
