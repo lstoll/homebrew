@@ -33,7 +33,7 @@ class Ruby18 <Formula
     Ruby18Rubygems.new.brew do
       ruby = ARGV.include?("--no-suffix") ? "ruby" : "ruby1.8"
       ruby = "#{prefix}/bin/#{ruby}"
-      system ruby, "setup.rb", "--prefix=#{prefix}", "--vendor"
+      system ruby, "setup.rb", "--prefix=#{prefix}", "--format-executable"
     end
   end
   
@@ -53,7 +53,7 @@ Ruby will lose all your gems. Maybe.
 end
 
 class Ruby18Rubygems <Formula
-  url "http://rubyforge.org/frs/download.php/60718/rubygems-1.3.5.tgz"
-  md5 "6e317335898e73beab15623cdd5f8cff"
+  url "http://production.cf.rubygems.org/rubygems/rubygems-1.3.7.tgz"
+  md5 "e85cfadd025ff6ab689375adbf344bbe"
   homepage "http://docs.rubygems.org/"
 end
