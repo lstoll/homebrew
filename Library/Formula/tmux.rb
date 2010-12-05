@@ -50,6 +50,6 @@ diff -Nur tmux-1.3/server.c tmux-1.3.new/server.c
 -		fatal("daemon failed");
 +	if (_vprocmgr_detach_from_console(0) != NULL)
 +		fatalx("_vprocmgr_detach_from_console failed");
- 
- 	/* event_init() was called in our parent, need to reinit. */
- 	if (event_reinit(ev_base) != 0)
+
+	/* event_init() was called in our parent, need to reinit. */
+	if (event_reinit(ev_base) != 0)
